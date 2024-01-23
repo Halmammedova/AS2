@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/splide.min.css">
     <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/fancybox.css">
     <link rel="stylesheet" href="css/icons/bootstrap-icons.css">
 </head>
 <body>
@@ -50,7 +51,7 @@
             <div class="splide__track">
                 <ul class="splide__list">
                     <li class="splide__slide position-relative">
-                        <img src="img/banner-item-01.jpg" alt="" class="img-fluid">
+                        <img src="img/banner-item-01.jpg" alt="" class="img-fluid" data-fancybox="gallery">
                         <div class="position-absolute bottom-0 start-0 p-4">
                             <div class="fs-5 fw-semibold text-warning">
                                 FASHION
@@ -66,7 +67,7 @@
                         </div>
                     </li>
                     <li class="splide__slide position-relative">
-                        <img src="img/banner-item-02.jpg" alt="" class="img-fluid">
+                        <img src="img/banner-item-02.jpg" alt="" class="img-fluid" data-fancybox="gallery">
                         <div class="position-absolute bottom-0 start-0 p-4">
                             <div class="fs-5 fw-semibold text-warning">
                                 NATURE
@@ -82,7 +83,7 @@
                         </div>
                     </li>
                     <li class="splide__slide position-relative">
-                        <img src="img/banner-item-03.jpg" alt="" class="img-fluid">
+                        <img src="img/banner-item-03.jpg" alt="" class="img-fluid" data-fancybox="gallery">
                         <div class="position-absolute bottom-0 start-0 p-4">
                             <div class="fs-5 fw-semibold text-warning">
                                 LIFESTYLE
@@ -98,7 +99,7 @@
                         </div>
                     </li>
                     <li class="splide__slide position-relative">
-                        <img src="img/banner-item-04.jpg" alt="" class="img-fluid">
+                        <img src="img/banner-item-04.jpg" alt="" class="img-fluid" data-fancybox="gallery">
                         <div class="position-absolute bottom-0 start-0 p-4">
                             <div class="fs-5 fw-semibold text-warning">
                                 FASHION
@@ -114,7 +115,7 @@
                         </div>
                     </li>
                     <li class="splide__slide position-relative">
-                        <img src="img/banner-item-05.jpg" alt="" class="img-fluid">
+                        <img src="img/banner-item-05.jpg" alt="" class="img-fluid" data-fancybox="gallery">
                         <div class="position-absolute bottom-0 start-0 p-4">
                             <div class="fs-5 fw-semibold text-warning">
                                 NATURE
@@ -130,7 +131,7 @@
                         </div>
                     </li>
                     <li class="splide__slide position-relative">
-                        <img src="img/banner-item-06.jpg" alt="" class="img-fluid">
+                        <img src="img/banner-item-06.jpg" alt="" class="img-fluid" data-fancybox="gallery">
                         <div class="position-absolute bottom-0 start-0 p-4">
                             <div class="fs-5 fw-semibold text-warning">
                                 LIFESTYLE
@@ -189,7 +190,7 @@
         <div class="row pb-lg-5">
             <div class="col-12 col-lg-8">
                 <div class="border" data-aos="fade-up" data-aos-duration="2000">
-                    <img src="img/blog-post-01.jpg" alt="" class="img-fluid w-100">
+                    <img src="img/blog-post-01.jpg" alt="" class="img-fluid w-100" data-fancybox data-caption="LIFESTYLE">
                     <div class="p-3 p-lg-5">
                         <div class="fs-5 fw-bold text-warning">
                             LIFESTYLE
@@ -218,7 +219,7 @@
                     </div>
                 </div>
                 <div class="border my-4 my-lg-5" data-aos="fade-up" data-aos-duration="2000">
-                    <img src="img/blog-post-02.jpg" alt="" class="img-fluid w-100">
+                    <img src="img/blog-post-02.jpg" alt="" class="img-fluid w-100" data-fancybox data-caption="HEALTHY">
                     <div class="p-3 p-lg-5">
                         <div class="fs-5 fw-bold text-warning">
                             HEALTHY
@@ -337,8 +338,11 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/splide.min.js"></script>
     <script src="js/aos.js"></script>
+    <script src="js/fancybox.umd.js"></script>
     <script>
-        AOS.init();
+        AOS.init({
+            once: true, 
+        });
         var splide = new Splide( '.splide', {
             type   : 'loop',
             interval: 3000,
@@ -362,6 +366,20 @@
             } );
 
             splide.mount();
+    </script>
+    <script>
+        Fancybox.bind("[data-fancybox]", {
+       // Transition effect when changing gallery items
+       Carousel: {
+         transition: "slide",
+       },
+       // Disable image zoom animation on opening and closing
+       Images: {
+         zoom: false,
+       },
+       // Custom CSS transition on opening
+       showClass: "f-fadeIn",
+    });
     </script>
 </body>
 </html>
